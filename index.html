@@ -12,7 +12,7 @@
     <meta name="keywords" content="Kruth, pvp client 1.8.9, Nepal Minecraft, Kruth client, PVP">
     <meta name="description" content="Kruth: Nepal's premier Minecraft 1.8.9 PVP client. Engineered for performance and precision.">
     <title>Kruth Client</title>
-    <link rel="icon" type="image/x-icon" href="/resources/logo.png">
+    <link rel="icon" type="image/x-icon" href="resources/logo.png">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,14 +36,17 @@
 }
 
         :root {
-            --primary: #6366f1;
-            --primary-glow: rgba(99, 102, 241, 0.4);
-            --accent: #ef4444;
-            --bg-dark: #050507;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
+            --primary: #007FF4;
+            --primary-glow: rgba(0, 127, 244, 0.3);
+            --accent: #EE5B11;
+            --accent-glow: rgba(238, 91, 17, 0.3);
+            --bg-dark: #0a0a0f;
+            --card-bg: rgba(15, 15, 25, 0.6);
+            --border: rgba(0, 127, 244, 0.2);
+            --text-main: #ffffff;
+            --text-dim: #a0a0b0;
+            --gradient-start: #007FF4;
+            --gradient-end: #00d4ff;
         }
 
         * {
@@ -233,34 +236,36 @@
         }
 
         .nepal-badge {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--accent);
-            padding: 8px 20px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--accent), #ff8c00);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            border: 1px solid rgba(239, 68, 68, 0.2);
+            border: none;
             margin-bottom: 30px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 5px 15px var(--accent-glow);
         }
 
         .hero h1 {
         font-family: "Titan One", sans-serif;
-        font-weight: 500;
-        letter-spacing: 0.4em;
-        font-size: clamp(3.5rem, 10vw, 6.5rem);
-        line-height: 0.9;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        font-size: clamp(3rem, 8vw, 5.5rem);
+        line-height: 1.1;
         margin-bottom: 25px;
 
-        background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-clip: text;
 
-        letter-spacing: 3px;
+        text-shadow: 0 0 30px var(--primary-glow);
 }
 
         .hero p {
@@ -400,25 +405,24 @@
 .btn-try-kruth {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
-  padding: 14px 34px;
-  border-radius: 16px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
-  background: linear-gradient(135deg, #7c5cff, #4f46e5);
+  background: linear-gradient(135deg, var(--primary), var(--gradient-end));
   color: #fff;
   text-decoration: none;
 
-  transition:
-    transform 0.35s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.35s ease,
-    filter 0.35s ease;
+  transition: all 0.3s ease;
 
-  box-shadow: 0 12px 30px rgba(79,70,229,0.35);
+  box-shadow: 0 8px 25px var(--primary-glow);
   position: relative;
   overflow: hidden;
+  border: 2px solid var(--primary);
 }
 .btn-try-kruth i {
   font-size: 20px;
@@ -438,63 +442,54 @@
   transition: opacity 0.35s ease;
 }
 .btn-try-kruth:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 20px 45px rgba(79,70,229,0.55);
-  filter: brightness(1.1);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px var(--primary-glow);
+  background: linear-gradient(135deg, var(--gradient-end), var(--primary));
 }
 
-.btn-try-kruth:hover::after {
-  opacity: 1;
-}
 .btn-try-kruth:hover i {
-  transform: translateY(-2px) scale(1.1);
+  transform: translateX(4px);
 }
 .btn-try-kruth:active {
-  transform: translateY(-2px) scale(0.97);
+  transform: translateY(-2px);
 }
 .news-card.glass-card {
-  transition:
-    transform 0.55s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.55s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+  transition: all 0.3s ease;
   will-change: transform;
+  border: 1px solid var(--border);
 }
 
 .news-card.glass-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow:
-    0 30px 70px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(99,102,241,0.25);
-  border-color: rgba(99,102,241,0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 0 2px var(--primary);
+  border-color: var(--primary);
+  background: rgba(15, 15, 25, 0.8);
 }
 .btn-download-now {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 12px 28px;
+  border-radius: 10px;
 
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 
-  color: #4f5af5;
-  border: 1px solid rgba(6, 11, 77, 0.753);
-  background: rgba(14, 16, 18, 0.274);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  background: transparent;
 
-  transition:
-    transform 0.4s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.4s ease,
-    background 0.4s ease,
-    color 0.4s ease;
+  transition: all 0.3s ease;
 }
 .btn-download-now:hover {
-  transform: translateY(-4px);
-  background: rgba(86, 73, 232, 0.171);
-  color: #151794;
-  box-shadow: 0 16px 38px rgba(88, 70, 255, 0.336);
+  transform: translateY(-3px);
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 12px 30px var(--primary-glow);
 }
 .btn-download-now i {
   transition: transform 0.35s ease;
@@ -545,29 +540,24 @@
   transform: translateY(-2px) scale(0.97);
 }
 .feat-card.glass-card {
-  transition:
-    transform 0.55s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.55s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+  transition: all 0.3s ease;
   will-change: transform;
+  border: 1px solid var(--border);
 }
 .feat-card.glass-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow:
-    0 28px 65px rgba(0,0,0,0.45),
-    inset 0 0 0 1px rgba(99,102,241,0.25);
-  border-color: rgba(99,102,241,0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 2px var(--primary);
+  border-color: var(--primary);
+  background: rgba(15, 15, 25, 0.8);
 }
 .feat-card.glass-card i {
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1),
-    filter 0.45s ease;
+  transition: all 0.3s ease;
 }
 
 .feat-card.glass-card:hover i {
-  transform: translateY(-4px) scale(1.1);
-  filter: drop-shadow(0 0 14px rgba(99,102,241,0.75));
+  transform: translateY(-3px);
+  color: var(--primary);
+  text-shadow: 0 0 15px var(--primary-glow);
 }
 .nav-links a.active {
 
@@ -590,14 +580,14 @@
 
     
     <div class="intro" id="introloading">
-        <img src="/resources/logo.png" alt="Logo" style="width: 80px; margin-bottom: 30px; filter: drop-shadow(0 0 20px var(--primary-glow));">
+        <img src="resources/logo.png" alt="Logo" style="width: 80px; margin-bottom: 30px; filter: drop-shadow(0 0 20px var(--primary-glow));">
         <div style="width: 35px; height: 35px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
     </div>
 
     
 <nav class="navbar floating-nav">
     <div class="brand">
-        <img src="/resources/logo.png" alt="logo" style="width: 42px;">
+        <img src="resources/logo.png" alt="logo" style="width: 42px;">
         <span></span>
     </div>
 
@@ -637,14 +627,14 @@
         <div class="news-card glass-card" data-aos="fade-up" class="update-card">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <span class="news-tag">Release v1.1</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">May 28, 2025</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">February 3, 2026</span>
             </div>
             <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Official Release in Development</h3>
             <p style="color: var(--text-dim); margin-bottom: 30px;">Kruth Launcher v1.1 is in active development, bringing enhanced optimizations, improved system intelligence, and new tools designed for competitive players. Expect smoother performance, better control, and a more powerful launcher experience.</p>
 
             <div style="text-align: right;">
-                <a href="#" onclick="openModal()" class="btn-under-dev" style="color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1px solid var(--border); padding: 10px 20px; border-radius: 12px; transition: 0.3s;">
-                    Under Development<i class='bx bx-time'></i>
+                <a href="beta11.html" class="btn-download-now" style="color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1px solid var(--border); padding: 10px 20px; border-radius: 12px; transition: 0.3s;">
+                    Download Now <i class='bx bx-right-arrow-alt'></i>
                 </a>
             </div>
 
@@ -652,7 +642,7 @@
 <div class="news-card glass-card" data-aos="fade-up">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <span class="news-tag">Beta V1.0</span>
-                <span style="font-size: 0.85rem; color: var(--text-dim);">January 12, 2025</span>
+                <span style="font-size: 0.85rem; color: var(--text-dim);">January 12, 2026</span>
             </div>
             <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Beta Launcher Released</h3>
             <p style="color: var(--text-dim); margin-bottom: 30px;">The wait is officially over. Kruth Beta v1.0 is now live for public use. The official launcher introduces custom JVM tuning, integrated skin management, smoother gameplay, higher FPS, and a streamlined experience from launch to play.</p>
@@ -792,7 +782,7 @@
 </style>
 
 <footer class="kruth-footer">
-    <img src="/resources/logo.png" class="footer-logo" alt="Kruth Logo">
+    <img src="resources/logo.png" class="footer-logo" alt="Kruth Logo">
 
     <p class="footer-text">
         © 2025 Kruth Development Team · Not affiliated with Minecraft<br>
