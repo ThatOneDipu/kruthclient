@@ -1,0 +1,14 @@
+{
+  "releases": [
+    {
+      "version": "1.1.0",
+      "fileurl": "https://github.com/kruthclient/kruthclient-releases/releases/download/v1.1.0/kruthclient-1.1.0.jar",
+      "filename": "kruthclient-1.1.0"
+    },
+    {
+      "version": "1.0.0",
+      "fileurl": "https://github.com/kruthclient/kruthclient-releases/releases/download/v1.0.0/kruthclient-1.0.0.jar",
+      "filename": "kruthclient-1.0.0"
+    }
+  ]
+}
